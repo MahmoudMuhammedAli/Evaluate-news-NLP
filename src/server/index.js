@@ -25,9 +25,10 @@ app.listen(8081, function () {
 })
 //POST
 app.post("/analysis", async (req, res) => {
+
     const endpoint = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`;
     try {
-        await fetch(endpoint)
+        const response = await fetch(endpoint)
             .then(res => {
                 return res.json()
             }).then(function (results) {
@@ -45,3 +46,27 @@ app.post("/analysis", async (req, res) => {
         console.log(error.message);
     }
 });
+
+
+
+//EXAMPLE CODE FROM MEANING CLOUD
+/*
+const formdata = new FormData();
+formdata.append("key", "3579de072e89f52887632392cea60905");
+formdata.append("txt", "YOUR TEXT HERE");
+formdata.append("lang", "TEXT LANGUAGE HERE");  // 2-letter code, like en es fr ...
+
+const requestOptions = {
+  method: 'POST',
+  body: formdata,
+  redirect: 'follow'
+};
+
+const response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
+  .then(response => ({
+    status: response.status, 
+    body: response.json()
+  }))
+  .then(({ status, body }) => console.log(status, body))
+  .catch(error => console.log('error', error));
+*/
