@@ -29,12 +29,12 @@ $white: #fafafa;
 
 
 
-ol.gradient-list {
+dl.gradient-list {
   counter-reset: gradient-counter;
   list-style: none;
   margin: 1.75rem 0;
   padding-left: 1rem;
-  > li {
+  > dt {
     background: white;
     color: #1d1f20;
     border-radius: 0 0.5rem 0.5rem 0.5rem;
@@ -67,17 +67,7 @@ ol.gradient-list {
       padding: 0.125em 0.25em;
       z-index: 1;
     }
-    @for $i from 1 through 5 {
-      &:nth-child(10n+#{$i}):before {
-        background: linear-gradient(135deg, rgba($green, $i * 0.2) 0%,rgba($yellow, $i * 0.2) 100%);
-      }
-    }
-    @for $i from 6 through 10 {
-      &:nth-child(10n+#{$i}):before {
-        background: linear-gradient(135deg, rgba($green, 1 - (($i - 5) * 0.2)) 0%,rgba($yellow, 1 - (($i - 5) * 0.2)) 100%);
-      }
-    }
-    + li {
+    + dl {
       margin-top: 2rem;
     }
   }
