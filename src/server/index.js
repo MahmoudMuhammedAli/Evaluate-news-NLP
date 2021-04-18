@@ -1,23 +1,17 @@
-var path = require('path')
+const dotenv = require('dotenv');
+dotenv.config();
+
+const path = require('path')
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
-var bodyParser = require('body-parser')
-var cors = require('cors')
+const cors = require('cors')
 
 
 const app = express()
 app.use(cors())
-
-app.use(bodyParser.json())
-
-app.use(bodyParser.urlencoded({
-  extended: true
-}))
-
+app.use(express.json());
 app.use(express.static('dist'))
 
-console.log(JSON.stringify(mockAPIResponse))
-
+//GETs
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
@@ -27,5 +21,27 @@ app.get('/test', function (req, res) {
 })
 
 app.listen(8081, function () {
-    console.log('Example app listening on port 8081!')
+    console.log('listening on port 8081!')
 })
+//POST
+app.post("/analysis", async (req, res) => {
+    const endpoint = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`;
+    try {
+        await fetch(endpoint)
+            .then(res => {
+                return res.json()
+            }).then(function (results) {
+                const data = {
+                    text: results.data.sentence_list[0].text,
+                    score_tag: results.data.score_tag,
+                    agreement: results.data.agreement,
+                    subjectivity: results.data.subjectivity,
+                    confidence: results.data.confidence,
+                    irony: results.data.irony,
+                };
+                res.send(data);
+            })
+    } catch (error) {
+        console.log(error.message);
+    }
+});
