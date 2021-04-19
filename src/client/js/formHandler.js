@@ -1,14 +1,14 @@
 import 'babel-polyfill'
-const dotenv = require('dotenv');
-dotenv.config();
 
-let endpoint = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=`
+
+let endpoint = `https://api.meaningcloud.com/sentiment-2.1?key=3579de072e89f52887632392cea60905&url=`
 
 
  const getAPI = async (url) => {
     const result = await fetch(endpoint + url + "&lang=en")
     try {
         const finalRes = await result.json();
+        console.log(finalRes)
         return finalRes;
     }
     catch (err) {
