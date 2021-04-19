@@ -1,10 +1,12 @@
 
   dl {
+    margin-top: 40px;
     display: flex;
     flex-flow: column wrap;
     max-height: 6em;
     border: 1px solid #333;
-    transition: .5s ease-in-out;
+    
+    transition: 1s ease-in-out;
     width: 1000px;
   }
   dt {
@@ -13,14 +15,17 @@
     color: rgb(255, 255, 255);
     font-size: large;
     font-weight: bolder;
-    transition: .5s ease-in-out;
+    transition: 1s ease-in-out;
 
   }
   dd {
     margin: 0;
-    padding: 4px;
-    min-height: 3em;
+    padding:4px;
+    padding-top:  22px;
+    
+    min-height: 4em;
     background: #f8f4e5;
-    color: #333;
+    color: rgb(12, 11, 11);
+    font-weight: bolder;
   }
 
