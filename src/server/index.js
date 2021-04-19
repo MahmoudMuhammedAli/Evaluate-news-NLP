@@ -5,7 +5,7 @@ const path = require('path')
 const express = require('express')
 const cors = require('cors');
 const { default: axios } = require('axios');
-
+projectData ={};
 
 const app = express()
 app.use(cors())
@@ -24,27 +24,40 @@ app.listen(8081, function () {
 
 
 //POST
-app.post("/analyze", async (req, res) => {
+app.post("/all", async (req, res) => {
 
-    const endpoint = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`;
+    // const endpoint = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`;
     try {
-        const response = await axios(endpoint)
-                const data = {
-                    text: results.data.sentence_list[0].text,
-                    score_tag: results.data.score_tag,
-                    agreement: results.data.agreement,
-                    subjectivity: results.data.subjectivity,
-                    confidence: results.data.confidence,
-                    irony: results.data.irony,
-                };
-                res.send(data);
+        // const response = await axios(endpoint)
+                // const data = {
+                //     text: results.data.sentence_list[0].text,
+                //     score_tag: results.data.score_tag,
+                //     agreement: results.data.agreement,
+                //     subjectivity: results.data.subjectivity,
+                //     confidence: results.data.confidence,
+                //     irony: results.data.irony,
+                // };
+                projectData["text"]=`${req.body.text}`
+                projectData["score_tag"]=`${req.body.score_tag}`
+                projectData["agreement"]=`${req.body.agreement}`
+                projectData["subjectivity"]=`${req.body.subjectivity}`
+                projectData["confidence"]=`${req.body.confidence}`
+                projectData["irony"]=`${req.body.irony}`
+                res.send(projectData);
             
     } catch (error) {
-        console.log(error.message);
+        console.log("error occured in server's post data");
     }
 });
 
-
+// my POST route from weather journal 
+// app.post('/all', (req, res) => {
+//   console.log(req.body);
+//   projectData["date"] = `${req.body.date}`;
+//   projectData["temp"] = `${req.body.temp}`;
+//   projectData["response"] = `${req.body.response}`;
+//   res.send(projectData);
+// })
 
 //EXAMPLE CODE FROM MEANING CLOUD
 /*
