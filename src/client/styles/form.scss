@@ -4,12 +4,12 @@ form {
     border: 3px solid #7a7a7a;
     border-radius: 1rem;
     padding: 40px;
+    display: flex;
     #sub{
         background: rgba(233, 94, 1, 0.945);
         color:#ffffff;
         font-size: 20px;
-        width:45%;
-        margin-top: 20px;
+        width:25%;
         text-align: center;
     }
 }
