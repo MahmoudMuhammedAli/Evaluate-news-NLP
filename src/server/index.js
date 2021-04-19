@@ -4,7 +4,6 @@ const fetch = require("node-fetch");
 const path = require('path')
 const express = require('express')
 const cors = require('cors');
-const { default: axios } = require('axios');
 projectData = {};
 
 const app = express()
@@ -28,7 +27,7 @@ app.post('/all', async (req, res) => {
   console.log("post is envoked!!!");
   console.log(req.body.url)
   // ask omar how to make the .env call
-  const endpoint = `https://api.meaningcloud.com/sentiment-2.1?key=3579de072e89f52887632392cea60905&url=${req.body.url}&lang=en`;
+  const endpoint = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`;
   try {
     fetch(endpoint)
     .then(response => response.json())

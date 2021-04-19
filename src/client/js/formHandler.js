@@ -1,17 +1,7 @@
 import 'babel-polyfill'
+import {UpdateUi} from "./update"
 
 
-export const handleSubmit = async () => {
-    console.log("HANDELSUBMIT is envoked!!!");
-    const url = document.getElementById("url").value;
-    console.log(url)
-    const data = await postData('/all', { url: url })
-    UpdateUi(data);
-};
-
-
-const el = document.getElementById("sub");
-el.addEventListener("click", handleSubmit);
 
 const postData = async (url = '', data = {}) => {
     console.log("your now in post data" + data.url)
@@ -33,21 +23,16 @@ const postData = async (url = '', data = {}) => {
 };
 
 
-const UpdateUi = async () => {
-    const request = fetch('/all')
-    // why is it returning 404!!!
-    // it's comming back with the data there is no need to json it
-    console.log("you're in updateUI")
-    try {
-        document.getElementById('text').innerHTML = `${request.text}`
-        document.getElementById('score_tag').innerHTML = `${request.score_tag}`
-        document.getElementById('agreement').innerHTML = `${request.agreement}`
-        document.getElementById('subjectivity').innerHTML = `${request.subjectivity}`
-        document.getElementById('confidence').innerHTML = `${request.confidence}`
-        document.getElementById('irony').innerHTML = `${request.irony}`
-    } catch (error) { console.log("error", error) }
-}
+export const handleSubmit = async () => {
+    console.log("HANDELSUBMIT is envoked!!!");
+    const url = document.getElementById("url").value;
+    console.log(url)
+    const data = await postData('/all', { url: url })
+    UpdateUi(data);
+};
 
+const el = document.getElementById("sub");
+el.addEventListener("click", handleSubmit);
 
 
 
