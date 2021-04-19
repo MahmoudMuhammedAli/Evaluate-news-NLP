@@ -5,7 +5,7 @@ export const handleSubmit = async () => {
     console.log("HANDELSUBMIT is envoked!!!");
     const url = document.getElementById("url").value;
     console.log(url)
-    const data = await postData('http://localhost:8081/all', { url: url })
+    const data = await postData('/all', { url: url })
     UpdateUi(data);
 };
 
@@ -34,7 +34,8 @@ const postData = async (url = '', data = {}) => {
 
 
 const UpdateUi = async () => {
-    const request = await fetch('/all')
+    const request = fetch('/all')
+    // why is it returning 404!!!
     // it's comming back with the data there is no need to json it
     console.log("you're in updateUI")
     try {
