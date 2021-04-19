@@ -1,19 +1,53 @@
+
+@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: rgb(42, 42, 42);
-    color: white;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2044837-jpeg.jpg") center center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-size: 12pt;
+  font-family: "Spartan";
+  color: #2A293E;
+}
+
+
+
+ input {
+  display: block;
+  width: 100%;
+  font-size: 12pt;
+  line-height: 24pt;
+  font-family: "Spartan";
+}
+
+input {
+  margin-bottom: 24pt;
 }
 h1{
-    font-size:40px ;
-}
 
-main {
-    flex: 2;
-}
+        font-size:40px ;
+        margin-top: 20px;
+        text-align: center;
+        transition: .5s ease-in-out;
+        color: rgb(0, 148, 148);
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 4px;
+        font-style: italic;
+    }
 
-section {
-    max-width: 800px;
-    margin: 50px auto;
+
+
+
+
+
+input:focus, textarea:focus {
+  border: 1px solid #6bd4b1;
 }

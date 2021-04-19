@@ -50,14 +50,7 @@ app.post("/all", async (req, res) => {
     }
 });
 
-// my POST route from weather journal 
-// app.post('/all', (req, res) => {
-//   console.log(req.body);
-//   projectData["date"] = `${req.body.date}`;
-//   projectData["temp"] = `${req.body.temp}`;
-//   projectData["response"] = `${req.body.response}`;
-//   res.send(projectData);
-// })
+
 
 //EXAMPLE CODE FROM MEANING CLOUD
 /*

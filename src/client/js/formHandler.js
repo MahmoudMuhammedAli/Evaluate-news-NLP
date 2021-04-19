@@ -19,14 +19,14 @@ let endpoint = `https://api.meaningcloud.com/sentiment-2.1?key=3579de072e89f5288
 document.getElementById('sub').addEventListener('click', () => {
     let url = document.getElementById('url').value;
     getAPI(url)
-        .then(() => {
+        .then((res) => {
             entry = {
-                text: results.data.sentence_list[0].text,
-                score_tag: results.data.score_tag,
-                agreement: results.data.agreement,
-                subjectivity: results.data.subjectivity,
-                confidence: results.data.confidence,
-                irony: results.data.irony,
+                
+                score_tag: res.score_tag,
+                agreement: res.agreement,
+                subjectivity: res.subjectivity,
+                confidence: res.confidence,
+                irony: res.irony,
             }
             console.log(entry)
             postData('/all', entry)
@@ -66,23 +66,5 @@ const postData = async (url = '', data = {}) => {
         console.log("error", error);
     }
 };
-
-// function handleSubmit(event) {
-//     event.preventDefault()
-
-//     // check what text was put into the form field
-//     let formText = document.getElementById('name').value
-
-//     Client.checkForName(formText)
-
-//     console.log("::: Form Submitted :::")
-//     fetch('http://localhost:8081/test')
-//     .then(res => {
-//         return res.json()
-//     })
-//     .then(function(data) {
-//         document.getElementById('results').innerHTML = data.message
-//     })
-// }
 
  export {getAPI}

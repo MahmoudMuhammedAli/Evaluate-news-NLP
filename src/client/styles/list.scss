@@ -1,74 +1,26 @@
-// @import url(https://fonts.googleapis.com/css?family=Montserrat:900|Raleway:400,400i,700,700i);
 
+  dl {
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 6em;
+    border: 1px solid #333;
+    transition: .5s ease-in-out;
+    width: 1000px;
+  }
+  dt {
+    padding: 4px 4px;
+    background: rgb(243, 97, 0);
+    color: rgb(255, 255, 255);
+    font-size: large;
+    font-weight: bolder;
+    transition: .5s ease-in-out;
 
+  }
+  dd {
+    margin: 0;
+    padding: 4px;
+    min-height: 3em;
+    background: #f8f4e5;
+    color: #333;
+  }
 
-// /*** VARIABLES ***/
-// /* Colors */
-// $black: #1d1f20;
-// $blue: #83e4e2;
-// $green: #a2ed56;
-// $yellow: #fddc32;
-// $white: #fafafa;
-
-
-
-// /*** EXTEND ***/
-// /* box-shadow */
-// %boxshadow {
-//   box-shadow: 0.25rem 0.25rem 0.6rem rgba(0,0,0,0.05), 0 0.5rem 1.125rem rgba(75,0,0,0.05);
-// }
-
-
-
-// /*** STYLE ***/
-// *,
-// *:before,
-// *:after {
-//   box-sizing: border-box;
-// }
-
-
-
-// dl.gradient-list {
-//   counter-reset: gradient-counter;
-//   list-style: none;
-//   margin: 1.75rem 0;
-//   padding-left: 1rem;
-//   > dt {
-//     background: white;
-//     color: #1d1f20;
-//     border-radius: 0 0.5rem 0.5rem 0.5rem;
-//     @extend %boxshadow;
-//     counter-increment: gradient-counter;
-//     margin-top: 1rem;
-//     min-height: 3rem;
-//     padding: 1rem 1rem 1rem 3rem;
-//     position: relative;
-//     &::before,
-//     &::after {
-//       background: linear-gradient(135deg, $blue 0%,$green 100%);
-//       border-radius: 1rem 1rem 0 1rem;
-//       content: '';
-//       height: 3rem;
-//       left: -1rem;
-//       overflow: hidden;
-//       position: absolute;
-//       top: -1rem;
-//       width: 3rem;
-//     }
-//     &::before {
-//       align-items: flex-end;
-//       @extend %boxshadow;
-//       content: counter(gradient-counter);
-//       color: $black;
-//       display: flex;
-//       font: 900 1.5em/1 'Montserrat';
-//       justify-content: flex-end;
-//       padding: 0.125em 0.25em;
-//       z-index: 1;
-//     }
-//     + dl {
-//       margin-top: 2rem;
-//     }
-//   }
-// }
