@@ -28,5 +28,8 @@ export const handleSubmit = async () => {
     const data = await postData('/all', { url: url })
     UpdateUi(data);
 }
- document.getElementById("sub").addEventListener("click", handleSubmit);
+document.addEventListener('DOMContentLoaded', function () {
+const e1 =  document.getElementById("sub");
+e1.addEventListener("click", handleSubmit);
 
+})
