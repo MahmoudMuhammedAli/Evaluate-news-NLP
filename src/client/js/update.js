@@ -1,5 +1,4 @@
 const UpdateUi = async (request) => {
-    console.log("you're in updateUI")
     try {
         document.getElementById('text').innerHTML = `${request.text}`
         document.getElementById('score').innerHTML = `${request.score_tag}`

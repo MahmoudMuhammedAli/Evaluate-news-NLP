@@ -2,7 +2,7 @@ import 'babel-polyfill'
 import { UpdateUi } from '../update'
 
 describe('Client Test', () => {
-    test('Testing to see whether UPdat function is defined or not', () => {
+    test('is update defined?', () => {
         expect(UpdateUi).toBeDefined()
     })
 })

@@ -24,15 +24,12 @@ app.listen(8081, function () {
 
 //POST
 app.post('/all', async (req, res) => {
-  console.log("post is envoked!!!");
   console.log(req.body.url)
-  // ask omar how to make the .env call
   const endpoint = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`;
   try {
     fetch(endpoint)
     .then(response => response.json())
     .then(results => {
-      console.log("your inside results \n" + results.agreement )
       data = {
       text: results.sentence_list[0].text,
       score_tag: results.score_tag,
@@ -43,13 +40,7 @@ app.post('/all', async (req, res) => {
     }
     res.send(data);
   });
-    // projectData["text"]=`${req.body.text}`
-    // projectData["score_tag"]=`${req.body.score_tag}`
-    // projectData["agreement"]=`${req.body.agreement}`
-    // projectData["subjectivity"]=`${req.body.subjectivity}`
-    // projectData["confidence"]=`${req.body.confidence}`
-    // projectData["irony"]=`${req.body.irony}`
-
+    
   } catch (error) {
     console.log(error);
   }
