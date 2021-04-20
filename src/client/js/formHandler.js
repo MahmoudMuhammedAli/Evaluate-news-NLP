@@ -31,5 +31,4 @@ export const handleSubmit = async () => {
 document.addEventListener('DOMContentLoaded', function () {
 const e1 =  document.getElementById("sub");
 e1.addEventListener("click", handleSubmit);
-
 })

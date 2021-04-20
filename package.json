@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node src/server/index.js",
+    "start": "nodemon src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack serve  --config webpack.dev.js --open"
   },
@@ -21,6 +21,7 @@
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "node-polyfill-webpack-plugin": "^1.1.0",
+    "nodemon": "^2.0.7",
     "path": "^0.12.7",
     "postcss": "^8.2.10",
     "webpack": "^5.34.0",
