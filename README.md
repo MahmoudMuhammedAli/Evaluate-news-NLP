@@ -2,14 +2,14 @@
 # Udacity's Webpack project #
 ### Tools used: ###
 
-- [x]HTML5
-- [x]CSS ,SASS
-- [x]JavaScript
-- [x]Nodejs, Express
-- [x]webPack
-- [x]Meaningcloud (API)
-- [x]jest
-- [x]workbox (service worker)
+- [x] HTML5
+- [x] CSS ,SASS
+- [x] JavaScript
+- [x] Nodejs, Express
+- [x] webPack
+- [x] Meaningcloud (API)
+- [x] jest
+- [x] workbox (service worker)
 
 - - - -
 
