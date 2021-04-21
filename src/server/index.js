@@ -24,7 +24,6 @@ app.listen(8081, function () {
 
 //POST
 app.post('/all', async (req, res) => {
-
   const endpoint = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`;
   try {
     fetch(endpoint)
