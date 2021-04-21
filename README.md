@@ -1,19 +1,23 @@
 # evaluate-news-nlp
- Markup :  # Udacity's Webpack project #
-Tools used:
- Markup : *HTML5
-          *CSS ,SASS
-          *JavaScript
-          *Nodejs, Express
-          *webPack
-          *Meaningcloud (API)
-          *jest
-          *workbox (service worker)
+# Udacity's Webpack project #
+### Tools used: ###
 
-Markup :  ## installation ##
+- [x]HTML5
+- [x]CSS ,SASS
+- [x]JavaScript
+- [x]Nodejs, Express
+- [x]webPack
+- [x]Meaningcloud (API)
+- [x]jest
+- [x]workbox (service worker)
+
+- - - -
+
+## installation ##
 To begin you'll need to type `npm install` in your terminal at the project root.
 then login to  `meaninCloud.com` and get your API_KEY and palce it in an .env file
 
+- - - -
 
 action                                   |    command
 ---------------------------------------- | -------------
